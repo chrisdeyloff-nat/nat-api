@@ -1,6 +1,8 @@
+using nat_api.api.responses;
+
 namespace nat_api.api.features.amounts
 {
-    public class AmountResponse
+    public class AmountResponse : BaseResponse
     {
         public long Id { get; set; }
         public decimal Value { get; set; }
