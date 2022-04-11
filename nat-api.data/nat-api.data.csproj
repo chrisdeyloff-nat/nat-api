@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>nat_api.data</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3"/>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0"/>
+    <PackageReference Include="System.Collections" Version="4.3.0"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3"/>
+  </ItemGroup>
+</Project>
