@@ -1,7 +1,7 @@
 # NAT API Solution
 
 ## Installation
-### .Net Core 5
+### .Net Core 6
 * [ASP.NET Core Runtime 6.0.3](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ### PostgreSQL
