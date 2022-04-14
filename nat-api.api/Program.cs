@@ -15,6 +15,8 @@ using MediatR.Extensions.FluentValidation.AspNetCore;
 using nat_api.api.middleware;
 using nat_api.api.pipeline_behaviors;
 
+const string AllowReactFrontEnd = "AllowReactFrontEnd";
+
 var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -54,6 +56,16 @@ try
     builder.Services.AddFluentValidation(new[] { domainAssembly });
     builder.Services.AddValidatorsFromAssembly(domainAssembly);
 
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy(name: AllowReactFrontEnd,
+                    builder => builder
+                                .WithOrigins(Settings.UIOriginURL)
+                                .AllowAnyMethod()
+                                .AllowAnyHeader()
+                                .AllowCredentials());
+    });
+
     builder.Host.UseSerilog();
 
     var app = builder.Build();
@@ -67,6 +79,7 @@ try
 
     // app.UseHttpsRedirection();
     app.UseRouting();
+    app.UseCors(AllowReactFrontEnd);
 
     app.UseAuthorization();
 
